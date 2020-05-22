@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProductsListActivity"></activity>
+        <activity android:name=".ProductsListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.linus.cynix.MainActivity">
+            </meta-data>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/NoActionBarTheme">
