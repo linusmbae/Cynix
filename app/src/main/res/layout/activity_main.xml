@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/design" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -16,16 +23,18 @@
         android:padding="5dp"
         android:fontFamily="@font/faster_one"
         android:text="Cynix"
+        android:textColor="@color/colorTextIcons"
         android:textSize="60sp" />
 
     <Button
         android:id="@+id/SignUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorBlue"
-        />
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Check Available Products"
+        android:textColor="@color/colorTextIcons" />
 
 </RelativeLayout>
