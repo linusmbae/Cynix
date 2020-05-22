@@ -29,10 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v==mSignUpButton)
         {
 
-            FragmentManager fm=getSupportFragmentManager();
-            SignUpDialogPage signUpDialogPage= new SignUpDialogPage();
-            signUpDialogPage.show(fm,"Sample Fragment");
-//            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
         }
     }
 }
