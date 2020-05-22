@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (v==mSignUpButton)
         {
-
-            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
+            Intent intent= new Intent(MainActivity.this,ProductsListActivity.class);
+            startActivity(intent);
+//            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
         }
     }
 }
