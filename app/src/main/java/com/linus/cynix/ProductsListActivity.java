@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -18,6 +19,7 @@ public class ProductsListActivity extends AppCompatActivity  {
     private String [] menWear=new String[]{"Men wear 1", "Men wear 2","Men wear 3", "Men wear 4","Men wear 5", "Men wear 6"};
     private int[]images=  new int[]{R.drawable.tyler,R.drawable.tamarcus,R.drawable.fabio,R.drawable.bruno,R.drawable.terricks,R.drawable.taylor};
 
+    public static final String TAG=ProductsListActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,9 @@ public class ProductsListActivity extends AppCompatActivity  {
                 Intent intent = new Intent(getApplicationContext(),ProductDetails.class);
                 intent.putExtra("wearName",menWear[i]);
                 intent.putExtra("product",images[i]);
+                Log.v(TAG,"In the onItemClickListener!");
                 startActivity(intent);
-//                        Toast.makeText(ProductsListActivity.this,"Clicked",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ProductsListActivity.this,"Cynix products",Toast.LENGTH_LONG).show();
 
             }
        });

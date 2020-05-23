@@ -24,4 +24,5 @@ public class MainActivityInstrumentedTest {
     public void TestButtonClick()throws Exception {
         onView(withId(R.id.SignUpButton)).perform(click());
     }
+
 }
