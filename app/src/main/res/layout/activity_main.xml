@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorBlue"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Check Available Products"
         android:textColor="@color/colorTextIcons" />

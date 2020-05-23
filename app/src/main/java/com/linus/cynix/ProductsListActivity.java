@@ -16,8 +16,8 @@ import butterknife.ButterKnife;
 
 public class ProductsListActivity extends AppCompatActivity  {
     GridView gridView;
-    private String [] menWear=new String[]{"Men wear 1", "Men wear 2","Men wear 3", "Men wear 4","Men wear 5", "Men wear 6"};
-    private int[]images=  new int[]{R.drawable.tyler,R.drawable.tamarcus,R.drawable.fabio,R.drawable.bruno,R.drawable.terricks,R.drawable.taylor};
+    private String [] menWear=new String[]{"Men wear 1", "Men wear 2","Men wear 3", "Men wear 4","Men wear 5", "Men wear 6","Men wear 7", "Men wear 8","Men wear 9", "Men wear 10","Men wear 11", "Men wear 12","Men wear 13", "Men wear 14"};
+    private int[]images=  new int[]{R.drawable.tyler,R.drawable.tamarcus,R.drawable.fabio,R.drawable.bruno,R.drawable.terricks,R.drawable.taylor,R.drawable.seven,R.drawable.eight,R.drawable.nine,R.drawable.ten,R.drawable.eleven,R.drawable.twelve,R.drawable.thirteen,R.drawable.fourteen};
 
     public static final String TAG=ProductsListActivity.class.getSimpleName();
 
