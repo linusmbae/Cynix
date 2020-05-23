@@ -4,27 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".ProductDetails">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/mens" />
 
     <TextView
         android:id="@+id/dataText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gravitas_one"
         android:text="Men Wear 1"
-        android:textColor="@color/colorBlue"
-        android:textSize="30dp"
-        />
+        android:textColor="@color/colorTextIcons"
+        android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/myImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:src="@drawable/tyler"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/dataText"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="78dp"
         />
 
 </RelativeLayout>
