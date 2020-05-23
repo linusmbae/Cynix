@@ -14,25 +14,42 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/mens" />
 
-    <TextView
-        android:id="@+id/dataText"
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/gravitas_one"
-        android:text="Men Wear 1"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="30dp" />
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        >
+
+        <TextView
+            android:id="@+id/dataText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="65dp"
+            android:fontFamily="@font/gravitas_one"
+            android:text="Men Wear 1"
+            android:textColor="@color/colorBlack"
+            android:textSize="30dp" />
 
     <ImageView
+        tools:ignore="ContentDescription"
         android:id="@+id/myImage"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/tyler"
+        android:scaleType="centerCrop"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/dataText"
         android:layout_marginTop="78dp"
         />
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
