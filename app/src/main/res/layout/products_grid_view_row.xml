@@ -7,6 +7,7 @@
     android:layout_height="180dp"
     android:background="#fff"
     android:id="@+id/gridView"
+    android:orientation="vertical"
     >
 
     <TextView
@@ -19,8 +20,8 @@
         android:text="Men wear1" />
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/mens"
