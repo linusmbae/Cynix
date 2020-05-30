@@ -1,6 +1,7 @@
 package com.linus.cynix.network;
 
 import com.linus.cynix.Constants;
+import com.linus.cynix.models.AvailableShops;
 
 import org.json.JSONArray;
 import org.json.JSONException;
