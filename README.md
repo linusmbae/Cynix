@@ -1,6 +1,6 @@
 # [Cynix](https://github.com/linusmbae/Cynix)
 
-> Cynix app is intended to be used to order both men and women wear  on phone without need to use a browser
+> Cynix_App is a fashion  software intended for men fashions only since we are dedicated on making sure that boy child gets nice and affordable clothes to put on from Cynix Shops.
 
 # Get started
 
