@@ -37,7 +37,6 @@ The instructions below will help you in project setup and testing in your local 
 > 4. Click on the build number seven times to activate developer options(Developer option will be activated)
 
 ![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/2.jpeg)
-
 ![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/3.jpeg)
 
 > 4 Select on developer option and select usb debugging
