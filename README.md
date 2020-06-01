@@ -28,7 +28,7 @@ The instructions below will help you in project setup and testing in your local 
 
 > 2. Navigate to your phone settings
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/1.jpeg)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/phone_settings.jpeg)
 
 > 3. Select about phone
 
@@ -36,12 +36,12 @@ The instructions below will help you in project setup and testing in your local 
 
 > 4. Click on the build number seven times to activate developer options(Developer option will be activated)
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/2.jpg)
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/3.jpg)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/build_number.jpg)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/developer_option.jpg)
 
 > 5 Select on developer option and select usb debugging
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/4.jpg)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/usb_debugging.jpg)
 
 > 6 Install Cynix app from your android studio.
 
@@ -51,11 +51,11 @@ The instructions below will help you in project setup and testing in your local 
 
 * Products List
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/productList.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/product_lists.png)
 
 * Products Details
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/productDetails.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/product_details.png)
 
 # Technologies used
 
