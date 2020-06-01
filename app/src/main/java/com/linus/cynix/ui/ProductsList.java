@@ -25,11 +25,8 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProductsList extends AppCompatActivity {
-@BindView(R.id.results)TextView mResults;
 @BindView(R.id.errorTextView)TextView mError;
 @BindView(R.id.progressBar)ProgressBar mProgressBar;
 //@BindView(R.id.baseGridView)GridView mGidView;
@@ -56,7 +53,7 @@ public class ProductsList extends AppCompatActivity {
                     RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(ProductsList.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
-                    Toast.makeText(ProductsList.this,"Cynix products",Toast.LENGTH_LONG).show();
+
                     showShops();
                 }else {
                     showUnsuccessfulMessage();
