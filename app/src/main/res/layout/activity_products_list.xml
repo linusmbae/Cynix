@@ -7,18 +7,33 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".ui.ProductsList">
-
-    <androidx.core.widget.NestedScrollView
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/mens" />
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/results"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
 
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
     <TextView
         android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorTextIcons"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,5 +42,12 @@
         app:layout_constraintTop_toTopOf="parent"
 
         />
-    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
 </RelativeLayout>

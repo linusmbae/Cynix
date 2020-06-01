@@ -3,7 +3,9 @@ package com.linus.cynix.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListAdapter;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.linus.cynix.Constants;
@@ -23,6 +25,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProductsList extends AppCompatActivity {
 @BindView(R.id.results)TextView mResults;
+@BindView(R.id.errorTextView)TextView mError;
+@BindView(R.id.progressBar)ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class ProductsList extends AppCompatActivity {
         call.enqueue(new Callback<List<Shops>>() {
             @Override
             public void onResponse(Call<List<Shops>> call, Response<List<Shops>> response) {
+                hideProgressBar();
                 if (!response.isSuccessful()){
                     mResults.setText("Code:"+response.code());
                     return;
@@ -58,8 +63,18 @@ public class ProductsList extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Shops>> call, Throwable t) {
-                mResults.setText(t.getMessage());
+                hideProgressBar();
+                showFailureMessage();
             }
         });
+    }
+
+    private void showFailureMessage() {
+        mError.setText("Something went wrong. Please check your Internet connection and try again later");
+        mError.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
     }
 }
