@@ -2,6 +2,7 @@ package com.linus.cynix;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.linus.cynix.models.Shops;
 
 import java.util.List;
 

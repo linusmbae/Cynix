@@ -11,11 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ProductsList"></activity>
+        <activity android:name=".ui.ProductsList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.linus.cynix.ui.ProductsList"></meta-data>
+        </activity>
         <activity android:name=".ProductDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.linus.cynix.ProductsListActivity"></meta-data>
+                android:value="com.linus.cynix.ui.ProductsList"></meta-data>
         </activity>
         <activity android:name=".ProductsListActivity">
             <meta-data
