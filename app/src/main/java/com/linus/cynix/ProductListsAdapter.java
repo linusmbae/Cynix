@@ -13,6 +13,7 @@ private String[] mMenWear;
 private Context mContext;
 private int[] mImages;
 
+
     public ProductListsAdapter(String[] menWear,Context context,int[] images) {
         this.mMenWear = menWear;
         this.mContext= context;

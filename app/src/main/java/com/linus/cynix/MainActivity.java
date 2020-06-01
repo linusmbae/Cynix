@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.linus.cynix.ui.ProductsList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (v==mSignUpButton)
         {
-            Intent intent= new Intent(MainActivity.this,ProductsListActivity.class);
+            Intent intent= new Intent(MainActivity.this, ProductsList.class);
             startActivity(intent);
 //            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
         }

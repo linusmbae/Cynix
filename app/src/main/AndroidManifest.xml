@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.linus.cynix">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,18 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.ProductsList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.linus.cynix.ui.ProductsList"></meta-data>
+        </activity>
         <activity android:name=".ProductDetails">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.linus.cynix.ProductsListActivity">
-
-            </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.linus.cynix.ui.ProductsList"></meta-data>
         </activity>
         <activity android:name=".ProductsListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.linus.cynix.MainActivity">
-
-            </meta-data>
+                android:value="com.linus.cynix.MainActivity"></meta-data>
         </activity>
         <activity
             android:name=".MainActivity"
