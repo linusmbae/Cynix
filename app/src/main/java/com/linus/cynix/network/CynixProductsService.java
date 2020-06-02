@@ -2,7 +2,6 @@ package com.linus.cynix.network;
 
 import com.linus.cynix.Constants;
 import com.linus.cynix.models.AvailableProducts;
-import com.linus.cynix.models.AvailableShops;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,40 +10,35 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
-public class CynixService {
-    public static void findShops(String location, Callback callback) {
+public class CynixProductsService {
+    public static void findProducts(String location, Callback callback) {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
         HttpUrl.Builder urlBuilder=HttpUrl.parse(Constants.CYNIX_BASE_URL).newBuilder();
     }
 
-    public ArrayList<AvailableShops> processResults(Response response){
-        ArrayList<AvailableShops> availableShops = new ArrayList<>();
+    public ArrayList<AvailableProducts> processResults(Response response){
+        ArrayList<AvailableProducts> availableProducts = new ArrayList<>();
         try{
             String jsonData = response.body().string();
             JSONObject cynixsJSON = new JSONObject(jsonData);
-            JSONArray cynixJSON = cynixsJSON.getJSONArray("shops");
+            JSONArray cynixJSON = cynixsJSON.getJSONArray("fashion/men");
             if (response.isSuccessful()){
                 for (int i = 0; i < cynixJSON.length(); i++){
                     JSONObject shopJSON = cynixJSON.getJSONObject(i);
                     String name = shopJSON.getString("name");
-                    String buildingName = shopJSON.getString("buildingName");
-                    String shopNumber = shopJSON.getString("shopNumber");
-                    String email = shopJSON.getString("email");
-                    String phone = shopJSON.getString("phone");
-                    String image =shopJSON.getString("image");
-                    int wear_id=shopJSON.getInt("wear_id");
+                    String color = shopJSON.getString("color");
+                    String size = shopJSON.getString("size");
+                    String category = shopJSON.getString("category");
 
-                    AvailableShops availableShops1 = new AvailableShops(name, buildingName, shopNumber, email,phone,image,wear_id);
-                    availableShops.add(availableShops1);
+                    AvailableProducts availableProducts1 = new AvailableProducts(name, color, size, category);
+                    availableProducts.add(availableProducts1);
                 }
             }
         } catch (IOException e) {
@@ -52,8 +46,6 @@ public class CynixService {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return availableShops;
+        return availableProducts;
     }
-
-
 }

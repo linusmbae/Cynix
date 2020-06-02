@@ -2,7 +2,8 @@ package com.linus.cynix;
 
 import android.os.Build;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.linus.cynix.ui.MainActivity;
 
 import org.junit.Before;
 import org.junit.Test;

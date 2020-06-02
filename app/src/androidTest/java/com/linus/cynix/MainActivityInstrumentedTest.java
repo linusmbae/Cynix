@@ -1,7 +1,5 @@
 package com.linus.cynix;
 
-import android.widget.Toast;
-
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -9,6 +7,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.action.ViewActions.click;
 import androidx.test.filters.LargeTest;
+
+import com.linus.cynix.ui.MainActivity;
 
 import org.junit.Rule;
 import org.junit.Test;

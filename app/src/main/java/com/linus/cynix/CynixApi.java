@@ -1,5 +1,6 @@
 package com.linus.cynix;
 
+import com.linus.cynix.models.Products;
 import com.linus.cynix.models.Shops;
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface CynixApi {
 
     @GET("shops")
     Call<List<Shops>> getShops();
+
+    @GET("shops/:id")
+    Call<List<Products>>getProducts();
 }

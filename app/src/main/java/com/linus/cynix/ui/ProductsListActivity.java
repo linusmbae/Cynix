@@ -1,25 +1,17 @@
-package com.linus.cynix;
+package com.linus.cynix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.linus.cynix.models.AvailableShops;
-import com.linus.cynix.network.CynixService;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.linus.cynix.adapter.ProductListsAdapter;
+import com.linus.cynix.R;
 
 public class ProductsListActivity extends AppCompatActivity  {
     GridView gridView;
@@ -42,7 +34,7 @@ public class ProductsListActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView<?>adapterView, View v,int i,long l)
             {
-                Intent intent = new Intent(getApplicationContext(),ProductDetails.class);
+                Intent intent = new Intent(getApplicationContext(), ProductDetails.class);
                 intent.putExtra("wearName",menWear[i]);
                 intent.putExtra("product",images[i]);
                 Log.v(TAG,"In the onItemClickListener!");

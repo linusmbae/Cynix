@@ -1,4 +1,4 @@
-package com.linus.cynix;
+package com.linus.cynix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.linus.cynix.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

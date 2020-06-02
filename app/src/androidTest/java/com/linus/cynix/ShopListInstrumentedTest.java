@@ -7,6 +7,8 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 
 
+import com.linus.cynix.ui.ProductsListActivity;
+
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -23,7 +25,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ProductsListInstrumentedTest {
+public class ShopListInstrumentedTest {
 
     @Rule
     public ActivityTestRule<ProductsListActivity> activityTestRule=new ActivityTestRule<>(ProductsListActivity.class);
