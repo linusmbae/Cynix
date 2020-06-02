@@ -3,6 +3,9 @@ package com.linus.cynix.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Shops {
     @SerializedName("id")
     @Expose
@@ -22,6 +25,12 @@ public class Shops {
     @SerializedName("phone")
     @Expose
     private String phone;
+    @SerializedName("image")
+    @Expose
+    private String image;
+    @SerializedName("wear_id")
+    @Expose
+    private int wear_id;
 
     /**
      * No args constructor for use in serialization
@@ -38,15 +47,19 @@ public class Shops {
      * @param shopNumber
      * @param email
      * @param phone
+     * @param image
+     * @param wear_id
      */
 
-    public Shops(int id, String name, String buildingName, String shopNumber, String email, String phone) {
+    public Shops(int id, String name, String buildingName, String shopNumber, String email, String phone,String image,int wear_id) {
         this.id = id;
         this.name = name;
         this.buildingName = buildingName;
         this.shopNumber = shopNumber;
         this.email = email;
         this.phone = phone;
+        this.image=image;
+        this.wear_id=wear_id;
     }
 
     public int getId() {
@@ -95,5 +108,21 @@ public class Shops {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getWear_id() {
+        return wear_id;
+    }
+
+    public void setWear_id(int wear_id) {
+        this.wear_id = wear_id;
     }
 }

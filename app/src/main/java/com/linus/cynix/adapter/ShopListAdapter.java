@@ -1,16 +1,23 @@
 package com.linus.cynix.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.linus.cynix.ui.ProductsListActivity;
 import com.linus.cynix.R;
 import com.linus.cynix.models.Shops;
+import com.linus.cynix.ui.ShopsDetails;
+import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -27,7 +34,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.shopVi
     }
     @Override
     public ShopListAdapter.shopVieHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_list_item, parent, false);
         shopVieHolder viewHolder = new shopVieHolder(view);
         return viewHolder;
     }
@@ -45,6 +52,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.shopVi
 
         @BindView(R.id.shopNameTextView)TextView mNameTextView;
         @BindView(R.id.buildingTextView) TextView mBuildingTextView;
+        @BindView(R.id.shopImageView)ImageView mImageView;
 
         private Context mContext;
 
@@ -60,17 +68,18 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.shopVi
         public void bindShop(Shops shops) {
             mNameTextView.setText(shops.getName());
             mBuildingTextView.setText(shops.getBuildingName());
+            Picasso.get().load(shops.getImage()).into(mImageView);
         }
 
         @Override
         public void onClick(View v) {
             int itemPosition = getLayoutPosition();
-//            Intent intent = new Intent(mContext, RestaurantDetailActivity.class);
-//            intent.putExtra("position", itemPosition);
-//            intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
+            Intent intent = new Intent(mContext, ShopsDetails.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("shops", Parcels.wrap(mShops));
             Toast.makeText(mContext,"Cynix products",Toast.LENGTH_LONG).show();
 
-//            mContext.startActivity(intent);
+            mContext.startActivity(intent);
         }
     }
 }

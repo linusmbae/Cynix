@@ -22,9 +22,11 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
+        android:background="@color/colorBlack"
+        android:visibility="gone"  />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -42,5 +44,17 @@
         android:textColor="@color/colorTextIcons"
         android:layout_margin="16dp"
         android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loading"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Loading Cynix Data......"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/progressBar"
+        android:textColor="@color/colorPrimary"/>
+
 
 </RelativeLayout>

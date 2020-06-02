@@ -26,14 +26,14 @@ import retrofit2.Response;
 public class ShopList extends AppCompatActivity {
 @BindView(R.id.errorTextView)TextView mError;
 @BindView(R.id.progressBar)ProgressBar mProgressBar;
-//@BindView(R.id.baseGridView)GridView mGidView;
 @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+@BindView(R.id.loading)TextView mLoading;
    public List<Shops> shops;
    private ShopListAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products_list);
+        setContentView(R.layout.activity_shop_list);
         ButterKnife.bind(this);
 
         CynixApi cynixApi= CynixClient.getClient();
@@ -43,6 +43,7 @@ public class ShopList extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Shops>> call, Response<List<Shops>> response) {
                 hideProgressBar();
+                hideLoading();
                 if (response.isSuccessful()){
                     shops=response.body();
                     mAdapter= new ShopListAdapter(ShopList.this,shops);
@@ -60,6 +61,7 @@ public class ShopList extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Shops>> call, Throwable t) {
                 hideProgressBar();
+                hideLoading();
                 showFailureMessage();
             }
         });
@@ -81,4 +83,6 @@ public class ShopList extends AppCompatActivity {
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
+
+    private void hideLoading(){mLoading.setVisibility(View.GONE);}
 }
