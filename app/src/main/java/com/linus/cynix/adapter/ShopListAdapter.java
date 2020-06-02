@@ -17,22 +17,22 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.shopVieHolder> {
+public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.shopVieHolder> {
     private Context mContext;
     private List<Shops> mShops;
 
-    public ProductsListAdapter(Context context,List<Shops>shops) {
+    public ShopListAdapter(Context context, List<Shops>shops) {
         this.mContext= context;
         this.mShops=shops;
     }
     @Override
-    public ProductsListAdapter.shopVieHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ShopListAdapter.shopVieHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_item, parent, false);
         shopVieHolder viewHolder = new shopVieHolder(view);
         return viewHolder;
     }
     @Override
-    public void onBindViewHolder(ProductsListAdapter.shopVieHolder holder, int position) {
+    public void onBindViewHolder(ShopListAdapter.shopVieHolder holder, int position) {
         holder.bindShop(mShops.get(position));
     }
 

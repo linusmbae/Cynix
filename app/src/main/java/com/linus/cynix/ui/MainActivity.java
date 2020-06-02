@@ -1,15 +1,13 @@
-package com.linus.cynix;
+package com.linus.cynix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.linus.cynix.ui.ProductsList;
+import com.linus.cynix.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,9 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (v==mSignUpButton)
         {
-            Intent intent= new Intent(MainActivity.this, ProductsList.class);
+            Intent intent= new Intent(MainActivity.this, ShopList.class);
             startActivity(intent);
-//            Toast.makeText(MainActivity.this,"Clicked",Toast.LENGTH_LONG).show();
         }
     }
 }

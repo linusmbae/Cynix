@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ProductsListInstrumentedTest {
+public class ShopListInstrumentedTest {
 
     @Rule
     public ActivityTestRule<ProductsListActivity> activityTestRule=new ActivityTestRule<>(ProductsListActivity.class);
