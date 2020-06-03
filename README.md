@@ -51,15 +51,15 @@ The instructions below will help you in project setup and testing in your local 
 
 * Loading Data
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/loading_data.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable/loading_data.png)
 
 * Shops Available
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/shops.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable/shops.png)
 
 * Shop details
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/shop_details.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable/shop_details.png)
 
 * Products List
 
