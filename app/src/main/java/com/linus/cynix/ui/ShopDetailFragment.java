@@ -1,5 +1,7 @@
 package com.linus.cynix.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,12 +25,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class ShopDetailFragment extends Fragment {
+public class ShopDetailFragment extends Fragment implements View.OnClickListener {
 @BindView(R.id.shopImageView1)ImageView mShopImage;
 @BindView(R.id.shopNameTextView)TextView mShopName;
 @BindView(R.id.floorTextView)TextView mFloor;
 @BindView(R.id.phoneTextView)TextView mPhone;
 @BindView(R.id.buildingsTextView)TextView mBuilding;
+@BindView(R.id.emailTextView)TextView mEmail;
 
 private Shops mShop;
 
@@ -60,7 +63,22 @@ private Shops mShop;
         mFloor.setText(mShop.getShopNumber());
         mPhone.setText(mShop.getPhone());
         mBuilding.setText(mShop.getBuildingName());
-
+        mEmail.setText(mShop.getEmail());
+        mPhone.setOnClickListener(this);
+        mEmail.setOnClickListener(this);
         return view;
+    }
+    @Override
+    public void onClick(View v){
+        if (v==mPhone){
+            Intent phoneIntent =new Intent(Intent.ACTION_DIAL,
+            Uri.parse("tel:" + mShop.getPhone()));
+            startActivity(phoneIntent);
+        }
+        if (v==mEmail){
+            Intent emailIntent=new Intent(Intent.ACTION_SENDTO,
+                    Uri.parse("MAILTO:"+mShop.getEmail()));
+            startActivity(emailIntent);
+        }
     }
 }

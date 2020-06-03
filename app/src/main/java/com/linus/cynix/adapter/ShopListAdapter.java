@@ -77,7 +77,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.shopVi
             Intent intent = new Intent(mContext, ShopsDetails.class);
             intent.putExtra("position", itemPosition);
             intent.putExtra("shops", Parcels.wrap(mShops));
-            Toast.makeText(mContext,"Cynix products",Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext,"Cynix shops",Toast.LENGTH_LONG).show();
 
             mContext.startActivity(intent);
         }
