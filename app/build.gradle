@@ -78,4 +78,10 @@ dependencies {
 
 //    firbase
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+//    firebase
+    implementation 'com.google.firebase:firebase-database:17.0.0'
+
+//    firebase recycler
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
 }
