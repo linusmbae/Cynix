@@ -28,14 +28,27 @@
 
     <Button
         android:id="@+id/FindButton"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginStart="12dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/alfa_slab_one"
-        android:text="Check Available Products"
-        android:layout_marginBottom="20dp"
+        android:text="Available Products"
+        android:textColor="@color/colorTextIcons" />
+
+    <Button
+        android:id="@+id/savedShops"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Saved Shops"
         android:textColor="@color/colorTextIcons" />
 
 </RelativeLayout>
