@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1050898445401",
+    "firebase_url": "https://cynix-addf3.firebaseio.com",
+    "project_id": "cynix-addf3",
+    "storage_bucket": "cynix-addf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050898445401:android:9e608b20aef83fc2d76d48",
+        "android_client_info": {
+          "package_name": "com.linus.cynix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050898445401-n96g36mfav0jrbn5qkpeqdufpk25ppaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL4zcWoMTjpUfKWilEk_q-NWgEX1WckSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050898445401-n96g36mfav0jrbn5qkpeqdufpk25ppaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

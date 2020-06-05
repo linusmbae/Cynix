@@ -1,5 +1,6 @@
 package com.linus.cynix.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,7 @@ public class ShopList extends AppCompatActivity {
 @BindView(R.id.loading)TextView mLoading;
    public List<Shops> shops;
    private ShopListAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -9,28 +9,28 @@ import org.parceler.Parcel;
 public class Shops {
     @SerializedName("id")
     @Expose
-    private int id;
+    public int id;
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("buildingName")
     @Expose
-    private String buildingName;
+    public String buildingName;
     @SerializedName("shopNumber")
     @Expose
-    private String shopNumber;
+    public String shopNumber;
     @SerializedName("email")
     @Expose
-    private String email;
+    public String email;
     @SerializedName("phone")
     @Expose
-    private String phone;
+    public String phone;
     @SerializedName("image")
     @Expose
-    private String image;
+    public String image;
     @SerializedName("wear_id")
     @Expose
-    private int wear_id;
+    public int wear_id;
 
     /**
      * No args constructor for use in serialization
