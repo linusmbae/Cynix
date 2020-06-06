@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SavedShops"></activity>
+        <activity android:name=".ui.CynixLogin"></activity>
+        <activity android:name=".ui.SavedShops" />
         <activity android:name=".ui.ShopsDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
