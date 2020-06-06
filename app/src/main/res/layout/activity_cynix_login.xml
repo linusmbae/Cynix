@@ -18,6 +18,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
         android:src="@drawable/ic_baseline_person_24" />
 
     <TextView
@@ -28,9 +29,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="20dp"
         android:text="Welcome to Cynix Shops"
         android:fontFamily="@font/lobster"
         android:textColor="@color/colorTextIcons"
@@ -46,7 +47,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="30dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/input"
         android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
         android:hint="Email"
@@ -64,42 +65,42 @@
         android:layout_gravity="center"
         android:layout_marginStart="30dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/input"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:hint="Password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:padding="20dp"
         android:textColor="@color/colorBlue" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtPass"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="153dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/green_round_button"
         android:text="Login"
+        android:textStyle="bold"
         android:textColor="@color/colorTextIcons"
         android:textSize="25dp" />
 
     <TextView
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login"
-        android:layout_alignParentStart="true"
+        android:layout_above="@id/login"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="22dp"
         android:textColor="@color/colorTextIcons"
-        android:layout_marginBottom="87dp"
-        android:text="Don't have an account? Sign up here!" />
+        android:textSize="20dp"
+        android:text="Sign up here!" />
 
 </RelativeLayout>
 </RelativeLayout>

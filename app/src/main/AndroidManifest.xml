@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.CynixSignUp"></activity>
-        <activity android:name=".ui.CynixLogin" />
+        <activity android:name=".ui.CynixLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.SavedShops" />
         <activity android:name=".ui.ShopsDetails">
             <meta-data
@@ -37,11 +43,11 @@
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <meta-data
