@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.linus.cynix.R;
 
 import butterknife.BindView;
@@ -24,16 +26,17 @@ import butterknife.ButterKnife;
 
 public class CynixSignUp extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = CynixSignUp.class.getSimpleName();
-@BindView(R.id.txtLogin)TextView mLogin;
-@BindView(R.id.txtName)TextView mName;
-@BindView(R.id.txtEmail)TextView mEmail;
-@BindView(R.id.txtPass)TextView mPass;
-@BindView(R.id.txtConfirmPass)TextView mConfirmPass;
-@BindView(R.id.btnRegister)Button mRegister;
+    @BindView(R.id.txtLogin)TextView mLogin;
+    @BindView(R.id.txtName)EditText mName;
+    @BindView(R.id.txtEmail)EditText mEmail;
+    @BindView(R.id.txtPass)EditText mPass;
+    @BindView(R.id.txtConfirmPass)EditText mConfirmPass;
+    @BindView(R.id.btnRegister)Button mRegister;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
+    private String mUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +73,13 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
     }
 
     private void createNewUser() {
-        final String name = mName.getText().toString().trim();
+        mUserName = mName.getText().toString().trim();
         final String email = mEmail.getText().toString().trim();
         String pass = mPass.getText().toString().trim();
         String confirmPass = mConfirmPass.getText().toString().trim();
 
         boolean validEmail = isValidEmail(email);
-        boolean validName = isValidName(name);
+        boolean validName = isValidName(mUserName);
         boolean validPassword = isValidPassword(pass, confirmPass);
         if (!validEmail || !validName || !validPassword) return;
 
@@ -85,13 +88,34 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                mAuthProgressDialog.dismiss();
                 if (task.isSuccessful()){
                     Log.d(TAG, "Authentication successful");
+                    createFirebaseUserProfile(task.getResult().getUser());
                 }else {
                     Toast.makeText(CynixSignUp.this,"Authentication failed.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private void createFirebaseUserProfile(final FirebaseUser user) {
+
+        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
+                .setDisplayName(mUserName)
+                .build();
+
+        user.updateProfile(addProfileName)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, user.getDisplayName());
+                        }
+                    }
+
+                });
     }
 
     private void createAuthStateListener(){
