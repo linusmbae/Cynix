@@ -9,19 +9,19 @@ import org.parceler.Parcel;
 public class Products {
     @SerializedName("id")
     @Expose
-    private int id;
+    public int id;
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("color")
     @Expose
-    private String color;
+    public String color;
     @SerializedName("size")
     @Expose
-    private int size;
+    public int size;
     @SerializedName("category")
     @Expose
-    private String category;
+    public String category;
 
 
     /**
