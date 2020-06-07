@@ -3,6 +3,7 @@ package com.linus.cynix.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +33,7 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private ProgressDialog mAuthProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,14 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
         mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
 
+        createAuthProgressDialog();
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Authenticating Credentials...");
+        mAuthProgressDialog.setCancelable(false);
     }
 
     @Override
@@ -62,10 +72,17 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
     private void createNewUser() {
         final String name = mName.getText().toString().trim();
         final String email = mEmail.getText().toString().trim();
-        String password = mPass.getText().toString().trim();
+        String pass = mPass.getText().toString().trim();
         String confirmPass = mConfirmPass.getText().toString().trim();
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        boolean validEmail = isValidEmail(email);
+        boolean validName = isValidName(name);
+        boolean validPassword = isValidPassword(pass, confirmPass);
+        if (!validEmail || !validName || !validPassword) return;
+
+        mAuthProgressDialog.show();
+
+        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
@@ -104,5 +121,34 @@ public class CynixSignUp extends AppCompatActivity implements View.OnClickListen
         if(mAuthListener != null){
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+
+    private boolean isValidEmail(String email) {
+        boolean isGoodEmail =
+                (email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
+        if (!isGoodEmail) {
+            mEmail.setError("Please enter a valid email address");
+            return false;
+        }
+        return isGoodEmail;
+    }
+
+    private boolean isValidName(String name) {
+        if (name.equals("")) {
+            mName.setError("Please enter your name");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isValidPassword(String password, String confirmPassword) {
+        if (password.length() < 6) {
+            mPass.setError("Please create a password containing at least 6 characters");
+            return false;
+        } else if (!password.equals(confirmPassword)) {
+            mConfirmPass.setError("Passwords do not match");
+            return false;
+        }
+        return true;
     }
 }
