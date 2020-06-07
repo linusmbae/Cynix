@@ -8,8 +8,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/design" />
 
@@ -30,9 +32,13 @@
         android:id="@+id/FindButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="21dp"
-        android:layout_marginStart="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_above="@id/savedShops"
+
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Available Products"
@@ -42,11 +48,13 @@
         android:id="@+id/savedShops"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="21dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Saved Shops"
         android:textColor="@color/colorTextIcons" />

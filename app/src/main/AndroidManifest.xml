@@ -41,8 +41,7 @@
                 android:value="com.linus.cynix.ui.ShopList" />
         </activity>
         <activity
-            android:name=".ui.MainActivity"
-            android:theme="@style/NoActionBarTheme">
+            android:name=".ui.MainActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
