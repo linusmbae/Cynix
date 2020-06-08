@@ -32,6 +32,8 @@ public class Shops {
     @Expose
     public int wear_id;
 
+    private String pushId;
+
     /**
      * No args constructor for use in serialization
      *
@@ -124,5 +126,13 @@ public class Shops {
 
     public void setWear_id(int wear_id) {
         this.wear_id = wear_id;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

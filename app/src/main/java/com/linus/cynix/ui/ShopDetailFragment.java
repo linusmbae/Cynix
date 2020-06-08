@@ -15,12 +15,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.linus.cynix.Constants;
 import com.linus.cynix.R;
 import com.linus.cynix.models.Shops;
 import com.squareup.picasso.Picasso;
+import com.linus.cynix.ui.ProductsListActivity;
 
 import org.parceler.Parcels;
 
@@ -39,14 +42,12 @@ public class ShopDetailFragment extends Fragment implements View.OnClickListener
 @BindView(R.id.buildingsTextView)TextView mBuilding;
 @BindView(R.id.emailTextView)TextView mEmail;
 @BindView(R.id.saveButton)Button mSave;
+@BindView(R.id.viewProductsButton)Button mViewProductsButton;
 
-private SharedPreferences.Editor mEditor;
 
 private Shops mShop;
 
-    public ShopDetailFragment() {
-        // Required empty public constructor
-    }
+    public ShopDetailFragment() {}
 
     public static ShopDetailFragment newInstance(Shops shops) {
         ShopDetailFragment shopDetailFragment = new ShopDetailFragment();
@@ -76,9 +77,15 @@ private Shops mShop;
         mPhone.setText(mShop.getPhone());
         mBuilding.setText(mShop.getBuildingName());
         mEmail.setText(mShop.getEmail());
+
+
+
+
         mPhone.setOnClickListener(this);
         mEmail.setOnClickListener(this);
         mSave.setOnClickListener(this);
+        mViewProductsButton.setOnClickListener(this);
+
         return view;
     }
     @Override
@@ -94,11 +101,24 @@ private Shops mShop;
             startActivity(emailIntent);
         }
         if (v == mSave) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
             DatabaseReference restaurantRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_SHOPS);
-            restaurantRef.push().setValue(mShop);
+                    .getReference(Constants.FIREBASE_CHILD_SHOPS)
+                    .child(uid);
+
+            DatabaseReference pushRef = restaurantRef.push();
+            String pushId = pushRef.getKey();
+            mShop.setPushId(pushId);
+            pushRef.setValue(mShop);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
+        if (v==mViewProductsButton){
+            Intent intent=new Intent(getActivity(),ProductsListActivity.class);
+            startActivity(intent);
+        }
+
     }
 }

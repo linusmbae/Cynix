@@ -41,7 +41,7 @@
 
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/alfa_slab_one"
-        android:text="Available Products"
+        android:text="Available Shops"
         android:textColor="@color/colorTextIcons" />
 
     <Button
