@@ -99,6 +99,7 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"/>
+
             </LinearLayout>
 
             <Button
@@ -113,6 +114,21 @@
                 android:fontFamily="@font/alfa_slab_one"
                 android:text="Save Shop"
                 android:layout_marginBottom="20dp"
+                android:textColor="@color/colorTextIcons" />
+
+            <Button
+                android:id="@+id/viewProductsButton"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_above="@+id/saveButton"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/alfa_slab_one"
+                android:text="Products"
                 android:textColor="@color/colorTextIcons" />
         </RelativeLayout>
     </LinearLayout>
