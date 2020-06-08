@@ -6,7 +6,8 @@
     android:layout_width="155dp"
     android:layout_height="190dp"
     android:layout_margin="5dp"
-    cardview:cardCornerRadius="4dp">
+    cardview:cardCornerRadius="4dp"
+    >
 
 
 <RelativeLayout

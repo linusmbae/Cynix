@@ -45,9 +45,18 @@ The instructions below will help you in project setup and testing in your local 
 
 > 6 Install Cynix app from your android studio.
 
-* Start page
+* Registration page
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/startpage.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/registration.png)
+
+
+* Login page
+
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/login.png)
+
+* Home page
+
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/home.png)
 
 * Loading Data
 
@@ -63,11 +72,8 @@ The instructions below will help you in project setup and testing in your local 
 
 * Products List
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/product_lists.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/products.png)
 
-* Products Details
-
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/product_details.png)
 
 # Technologies used
 
