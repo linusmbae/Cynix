@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SavedShops" />
+        <activity android:name=".ui.SavedShops" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.linus.cynix.ui.MainActivity" />
+        </activity>
         <activity android:name=".ui.ShopsDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -28,7 +32,7 @@
         <activity android:name=".ui.ShopList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.linus.cynix.ui.ShopList" />
+                android:value="com.linus.cynix.ui.MainActivity" />
         </activity>
         <activity android:name=".ui.ProductDetails">
             <meta-data
@@ -42,11 +46,6 @@
         </activity>
         <activity
             android:name=".ui.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
 
         <meta-data
