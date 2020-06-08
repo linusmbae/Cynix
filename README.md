@@ -64,11 +64,11 @@ The instructions below will help you in project setup and testing in your local 
 
 * Shops Available
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable/shops.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/shops.png)
 
 * Shop details
 
-![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable/shop_details.png)
+![alt text](https://github.com/linusmbae/Cynix/blob/master/app/src/main/res/drawable-v24/shop_details.png)
 
 * Products List
 
