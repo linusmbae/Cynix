@@ -13,6 +13,6 @@ public interface CynixApi {
     @GET("shops")
     Call<List<Shops>> getShops();
 
-    @GET("shops/:id")
+    @GET("fashion/men/:id")
     Call<List<Products>>getProducts();
 }

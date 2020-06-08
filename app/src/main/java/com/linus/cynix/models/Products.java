@@ -19,9 +19,15 @@ public class Products {
     @SerializedName("size")
     @Expose
     public int size;
+    @SerializedName("shop_id")
+    @Expose
+    public int shop_id;
     @SerializedName("category")
     @Expose
     public String category;
+    @SerializedName("image")
+    @Expose
+    public String image;
 
 
     /**
@@ -37,15 +43,19 @@ public class Products {
      * @param name
      * @param color
      * @param size
+     * @param shop_id
      * @param category
+     * @param image
      */
 
-    public Products(int id, String name, String color, int size, String category) {
+    public Products(int id, String name, String color, int size,int shop_id, String category,String image) {
         this.id = id;
         this.name = name;
         this.color = color;
         this.size = size;
+        this.shop_id=shop_id;
         this.category = category;
+        this.image=image;
     }
 
     public int getId() {
@@ -86,5 +96,21 @@ public class Products {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getShop_id() {
+        return shop_id;
+    }
+
+    public void setShop_id(int shop_id) {
+        this.shop_id = shop_id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

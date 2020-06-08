@@ -1,6 +1,9 @@
 package com.linus.cynix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,43 +11,87 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.linus.cynix.CynixApi;
 import com.linus.cynix.adapter.ProductListsAdapter;
 import com.linus.cynix.R;
+import com.linus.cynix.adapter.ShopListAdapter;
+import com.linus.cynix.models.Products;
+import com.linus.cynix.models.Shops;
+import com.linus.cynix.network.CynixClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProductsListActivity extends AppCompatActivity  {
-    GridView gridView;
-    private String [] menWear=new String[]{"Men wear 1", "Men wear 2","Men wear 3", "Men wear 4","Men wear 5", "Men wear 6","Men wear 7", "Men wear 8","Men wear 9", "Men wear 10","Men wear 11", "Men wear 12","Men wear 13", "Men wear 14"};
-    private int[]images=  new int[]{R.drawable.tyler,R.drawable.tamarcus,R.drawable.fabio,R.drawable.bruno,R.drawable.terricks,R.drawable.taylor,R.drawable.seven,R.drawable.eight,R.drawable.nine,R.drawable.ten,R.drawable.eleven,R.drawable.twelve,R.drawable.thirteen,R.drawable.fourteen};
-
-    public static final String TAG=ProductsListActivity.class.getSimpleName();
+    @BindView(R.id.errorTextView1)TextView mError;
+    @BindView(R.id.progressBar1)ProgressBar mProgressBar;
+    @BindView(R.id.recyclerView1)RecyclerView mRecyclerView;
+    @BindView(R.id.loading1)TextView mLoading;
+    public List<Products> products;
+    private ProductListsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products_list_column);
+        ButterKnife.bind(this);
 
+        CynixApi cynixApi= CynixClient.getClient();
 
-        gridView = findViewById(R.id.baseGridView);
-        gridView.setAdapter(new ProductListsAdapter( menWear,this,images));
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-          {
+        Call<List<Products>> call=cynixApi.getProducts();
+        call.enqueue(new Callback<List<Products>>() {
             @Override
-            public void onItemClick(AdapterView<?>adapterView, View v,int i,long l)
-            {
-                Intent intent = new Intent(getApplicationContext(), ProductDetails.class);
-                intent.putExtra("wearName",menWear[i]);
-                intent.putExtra("product",images[i]);
-                Log.v(TAG,"In the onItemClickListener!");
-                startActivity(intent);
-                        Toast.makeText(ProductsListActivity.this,"Cynix products",Toast.LENGTH_LONG).show();
+            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
+                hideProgressBar();
+                hideLoading();
+                if (response.isSuccessful()){
+                    products=response.body();
+                    mAdapter= new ProductListsAdapter(ProductsListActivity.this,products);
+                    mRecyclerView.setAdapter(mAdapter);
+                    mRecyclerView.setLayoutManager(new GridLayoutManager(ProductsListActivity.this,2));
+                    mRecyclerView.setHasFixedSize(true);
 
+                    showProducts();
+                }else {
+                    showUnsuccessfulMessage();
+                }
             }
-       });
 
-
+            @Override
+            public void onFailure(Call<List<Products>> call, Throwable t) {
+                hideProgressBar();
+                hideLoading();
+                showFailureMessage();
+            }
+        });
     }
 
+    private void showProducts(){
+        mRecyclerView.setVisibility(View.VISIBLE);
+    }
+    private void showFailureMessage() {
+        mError.setText("Something went wrong. Please check your Internet connection and try again later");
+        mError.setVisibility(View.VISIBLE);
+    }
+
+    private void showUnsuccessfulMessage() {
+        mError.setText("Something went wrong. Please try again later");
+        mError.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    private void hideLoading(){mLoading.setVisibility(View.GONE);}
 }
