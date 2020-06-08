@@ -28,16 +28,18 @@ public class CynixProductsService {
         try{
             String jsonData = response.body().string();
             JSONObject cynixsJSON = new JSONObject(jsonData);
-            JSONArray cynixJSON = cynixsJSON.getJSONArray("fashion/men");
+            JSONArray cynixJSON = cynixsJSON.getJSONArray("fashion/men/:id");
             if (response.isSuccessful()){
                 for (int i = 0; i < cynixJSON.length(); i++){
                     JSONObject shopJSON = cynixJSON.getJSONObject(i);
                     String name = shopJSON.getString("name");
                     String color = shopJSON.getString("color");
                     String size = shopJSON.getString("size");
+                    String shop_id = shopJSON.getString("shop_id");
                     String category = shopJSON.getString("category");
+                    String image = shopJSON.getString("image");
 
-                    AvailableProducts availableProducts1 = new AvailableProducts(name, color, size, category);
+                    AvailableProducts availableProducts1 = new AvailableProducts(name, color, size,shop_id, category,image);
                     availableProducts.add(availableProducts1);
                 }
             }

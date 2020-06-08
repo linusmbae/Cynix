@@ -58,6 +58,7 @@ private List<Products> mProducts;
         @BindView(R.id.productName)TextView mNameTextView;
         @BindView(R.id.imageView)ImageView mImageView;
 
+
         private Context mContext;
 
 
@@ -76,13 +77,9 @@ private List<Products> mProducts;
 
         @Override
         public void onClick(View v) {
-//            int itemPosition = getLayoutPosition();
-//            Intent intent = new Intent(mContext, ShopsDetails.class);
-//            intent.putExtra("position", itemPosition);
-//            intent.putExtra("shops", Parcels.wrap(mShops));
-//            Toast.makeText(mContext,"Cynix shops",Toast.LENGTH_LONG).show();
-//
-//            mContext.startActivity(intent);
+            if (v==mNameTextView){
+                Toast.makeText(mContext,"Cynix Products",Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
