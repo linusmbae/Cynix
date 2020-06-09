@@ -30,29 +30,29 @@ public class ShopListInstrumentedTest {
     @Rule
     public ActivityTestRule<ProductsListActivity> activityTestRule=new ActivityTestRule<>(ProductsListActivity.class);
 
-    @Test
-    public void testOnItemClickFunction_returnsImage()throws Exception
-    {
-        View activityDecorView=activityTestRule.getActivity().getWindow().getDecorView();
-        int images=  R.drawable.tyler;
-        onData(anything())
-                .inAdapterView(withId(R.id.baseGridView))
-                .atPosition(0)
-                .perform(click());
-        onView(withText(images)).inRoot(withDecorView(not(activityDecorView)))
-                .check(matches(withText(images)));
-    }
-
-    @Test
-    public  void testOnItemClick_returnsItemName()throws Exception
-    {
-        View activityDecorView=activityTestRule.getActivity().getWindow().getDecorView();
-        String name="Men wear 1";
-        onData(anything())
-                .inAdapterView(withId(R.id.baseGridView))
-                .atPosition(0)
-                .perform(click());
-        onView(withText(name)).inRoot(withDecorView(not(activityDecorView)))
-                .check(matches(withText(name)));
-    }
+//    @Test
+//    public void testOnItemClickFunction_returnsImage()throws Exception
+//    {
+//        View activityDecorView=activityTestRule.getActivity().getWindow().getDecorView();
+//        int images=  R.drawable.tyler;
+//        onData(anything())
+//                .inAdapterView(withId(R.id.baseGridView))
+//                .atPosition(0)
+//                .perform(click());
+//        onView(withText(images)).inRoot(withDecorView(not(activityDecorView)))
+//                .check(matches(withText(images)));
+//    }
+//
+//    @Test
+//    public  void testOnItemClick_returnsItemName()throws Exception
+//    {
+//        View activityDecorView=activityTestRule.getActivity().getWindow().getDecorView();
+//        String name="Men wear 1";
+//        onData(anything())
+//                .inAdapterView(withId(R.id.baseGridView))
+//                .atPosition(0)
+//                .perform(click());
+//        onView(withText(name)).inRoot(withDecorView(not(activityDecorView)))
+//                .check(matches(withText(name)));
+//    }
 }

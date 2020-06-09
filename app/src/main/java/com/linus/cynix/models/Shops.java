@@ -32,7 +32,7 @@ public class Shops {
     @Expose
     public int wear_id;
 
-    private String pushId;
+    public String pushId;
 
     /**
      * No args constructor for use in serialization
